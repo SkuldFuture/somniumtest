@@ -1,5 +1,5 @@
 export const HistoryPage = () => {
   return (
-    <div>ui</div>
+    <div>HistoryPage</div>
   )
 }

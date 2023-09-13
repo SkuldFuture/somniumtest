@@ -2,26 +2,26 @@ import {
   AppBar,
   Box,
   Button,
-  IconButton,
+  Link,
   Menu,
   Toolbar,
   Typography,
 } from "@mui/material";
+import GoogleIcon from "@mui/icons-material/Google";
+import { Link as RouterLink } from "react-router-dom";
 import { MouseEvent, useState } from "react";
-
-const navItems = ["Home", "History", "Favorites"];
 
 export const Header = () => {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
-  const open = Boolean(anchorElNav)
+  const open = Boolean(anchorElNav);
 
   const handleOpenNavMenu = (event: MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget)
+    setAnchorElNav(event.currentTarget);
   };
-  
+
   const handleCloseNavMenu = (event: MouseEvent<HTMLElement>) => {
-    setAnchorElNav(null)
-  } 
+    setAnchorElNav(null);
+  };
 
   return (
     <Box sx={{ display: "flex" }}>
@@ -30,16 +30,30 @@ export const Header = () => {
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", sm: "flex" },
+              alignItems: "center",
+            }}
           >
-            Somnium Check connection
+            <GoogleIcon />
           </Typography>
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {navItems.map((item) => (
-              <Button key={item} sx={{ color: "#fff" }}>
-                {item}
-              </Button>
-            ))}
+          <Box sx={{ display: { xs: "none", sm: "flex" }, justifyContent: "space-between" }}>
+            <Button component={RouterLink} to="/">
+              link1
+            </Button>
+            <Button
+              component={RouterLink}
+              to="favorites"
+            >
+              link2
+            </Button>
+            <Button
+              component={RouterLink}
+              to="history"
+            >
+              link3
+            </Button>
           </Box>
         </Toolbar>
       </AppBar>
