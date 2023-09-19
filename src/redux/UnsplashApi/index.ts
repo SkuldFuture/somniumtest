@@ -1,1 +1,1 @@
-export { UnsplashApi, useGetPhotosQuery } from "./UnsplashApi";
+export { UnsplashApi, useGetRandomPhotosQuery } from "./UnsplashApi";

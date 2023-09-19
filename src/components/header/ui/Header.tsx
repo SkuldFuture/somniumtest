@@ -113,6 +113,7 @@ export const Header = () => {
           >
             {Object.keys(pages).map((keyPage) => (
               <Button
+                key={keyPage}
                 component={RouterLink}
                 to={pages[keyPage]}
                 sx={{ color: "#fff" }}
@@ -157,6 +158,7 @@ export const Header = () => {
             >
               {Object.keys(pages).map((key) => (
                 <RouterLink
+                  key={key}
                   to={pages[key]}
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
